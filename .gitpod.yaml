@@ -1,0 +1,21 @@
+tasks:
+  - name: Install Conda
+    command: |
+      # Download the Miniconda installer
+      wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda.sh
+      
+      # Install Miniconda
+      bash ~/miniconda.sh -b -p $HOME/miniconda
+      
+      # Initialize Conda for the shell
+      $HOME/miniconda/bin/conda init
+      
+      # Activate the Conda base environment
+      source ~/.bashrc
+      
+      # Update Conda to the latest version
+      conda update -n base -c defaults conda -y
+
+      # Optional: Install any additional packages or set up environments here
+      # conda create -n myenv python=3.8 -y
+      # conda activate myenv
